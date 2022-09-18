@@ -1,7 +1,6 @@
 {
-  "homepage": "https://hojayevadurli.github.io/To_Do_List.git",
-
   "name": "tstasktracker2",
+  "homepage": "https://hojayevadurli.github.io/To_Do_List",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
