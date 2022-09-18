@@ -2,14 +2,17 @@ import React from 'react'
 import {useState} from 'react'
 
 // import { useState, useEffect } from 'react'
-// import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Routes,Link } from 'react-router-dom'
 import Header from './components/Header'
 import Tasks from './components/Tasks'
 import AddTask from './components/AddTask'
 import Task from './components/Task'
+import NewPage from './components/NewPage'
+
 
 
 const App =()=>{
+    
     const [showAddTask, setShowAddTask]= useState(false)
     const [tasks, setTasks] = useState([
         {
@@ -45,9 +48,17 @@ const toggleTask = (id:number) => {
     setTasks(tasks.map(t=> t.id === id? {...t, reminder:!t.reminder}:t))
 } 
     return(
+          
         <div className='container'>
-            <Header onAdd={()=>setShowAddTask(!showAddTask)} showAdd={showAddTask}/>
+            <Header onAdd={()=>setShowAddTask(!showAddTask)} showAdd={showAddTask}
+            />
             {showAddTask&&< AddTask onAdd={addTask}/>}
+            <Router>
+            <div><nav> <Link to="/NewPage">NewPage</Link></nav></div>
+            <Routes>
+                <Route path="/" element={<NewPage/>} />
+            </Routes>
+           </Router>
             <Tasks tasks={tasks} 
             onDelete={deleteTask}
             onToggle = {toggleTask}/>

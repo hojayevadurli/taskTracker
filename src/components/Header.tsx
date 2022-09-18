@@ -2,6 +2,9 @@ import React from 'react'
 import PropTypes from 'prop-types'
 // import { useLocation } from 'react-router-dom'
 import Button from './Button'
+import NewPage from './NewPage'
+import { BrowserRouter as Router, Routes, Route, Link} from "react-router-dom";
+
 
 type HeaderProps ={
     title: string
@@ -13,6 +16,7 @@ const Header=({title, onAdd, showAdd}: HeaderProps)=>{
     
     return (
         <header className='header'>
+            
             <h1 >{title}</h1>
             <Button 
              color={showAdd? 'red': 'green'}

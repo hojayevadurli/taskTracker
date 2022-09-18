@@ -1,5 +1,6 @@
 import Task from './Task'
 
+
 type TasksProps ={
     tasks: Task[],
     onDelete:(id: number)=>void,
@@ -8,7 +9,8 @@ type TasksProps ={
 const Tasks =({tasks, onDelete, onToggle}: TasksProps)=>{    
   return (
     <>
-      {tasks.map((task)=>(
+    
+     {tasks.map((task)=>(
       <Task key={task.id} task={task}
       onDelete={onDelete} onToggle={onToggle} />
       ))}
