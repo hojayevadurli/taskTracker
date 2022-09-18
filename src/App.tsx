@@ -54,7 +54,7 @@ const toggleTask = (id:number) => {
             />
             {showAddTask&&< AddTask onAdd={addTask}/>}
             <Router>
-            <div><nav> <Link to="/NewPage">NewPage</Link></nav></div>
+            <div><nav> <Link to="/">NewPage</Link></nav></div>
             <Routes>
                 <Route path="/" element={<NewPage/>} />
             </Routes>
