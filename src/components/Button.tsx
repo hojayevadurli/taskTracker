@@ -19,8 +19,4 @@ const Button = ({ color, text, onClick }: ButtonProps) => {
   )
 }
 
-Button.defaultProps = {
-  color: 'purple',
-}
-
 export default Button

@@ -5,18 +5,19 @@ import Button from './Button'
 
 type HeaderProps ={
     title: string
+    onAdd: any
+    showAdd: boolean
 }
 
-const Header=({title}: HeaderProps)=>{
-    const onClick=()=>{
-        console.log('Click')
-    }
+const Header=({title, onAdd, showAdd}: HeaderProps)=>{
+    
     return (
         <header className='header'>
             <h1 >{title}</h1>
             <Button 
-             text='Add'
-             onClick={onClick}/>            
+             color={showAdd? 'red': 'green'}
+             text={showAdd ? 'Close': 'Add'}
+             onClick={onAdd}/>            
 
         </header>
     )
